@@ -1,0 +1,35 @@
+<div class="alert alert-success" style="text-align:center">
+  <strong>Parabéns!</strong> Seu cadastro foi realizado com sucesso.
+</div>
+
+<div class="text-center">
+    <label>Comportamento em relação aos seus investimentos:</label>
+    <p *ngIf="respostas.gR1">Alternativa selecionada: {{respostas.gR1}}</p><br>
+    <p *ngIf="!respostas.gR1">Não respondida</p><br>
+  
+    <label>Tempo que você deseja manter os seus investimentos:</label>
+    <p *ngIf="respostas.gR2">Alternativa selecionada: {{respostas.gR2}}</p><br>
+    <p *ngIf="!respostas.gR2">Não respondida</p><br>
+  
+    <label>Porcentagem desses investimentos você pode precisar em um ano:</label>
+    <p *ngIf="respostas.gR3">Alternativa selecionada: {{respostas.gR3}}</p><br>
+    <p *ngIf="!respostas.gR3">Não respondida</p><br>
+  
+    <label>Sua familiaridade com titulos de renda fixa ou tesouro direto:</label>
+    <p *ngIf="respostas.RendaOuTesouro">Alternativa selecionada: {{respostas.RendaOuTesouro}}</p><br>
+    <p *ngIf="!respostas.RendaOuTesouro">Não respondida</p><br>
+  
+    <label>Sua familiaridade com fundos de investimento:</label>
+    <p *ngIf="respostas.FundosInvestimento">Alternativa selecionada: {{respostas.FundosInvestimento}}</p><br>
+    <p *ngIf="!respostas.FundosInvestimento">Não respondida</p><br>
+  
+    <label>Sua familiaridade com ações a vista:</label>
+    <p *ngIf="respostas.AcoesAVista" >Alternativa selecionada: {{respostas.AcoesAVista}}</p><br>
+    <p *ngIf="!respostas.AcoesAVista">Não respondida</p><br>
+  
+    <label>Sua familiaridade com aluguel de ações, termos, opções e futuros:</label>
+    <p *ngIf="respostas.AluguelOF" >Alternativa selecionada: {{respostas.AluguelOF}}</p><br>
+    <p *ngIf="!respostas.AluguelOF">Não respondida</p><br>
+</div>
+
+

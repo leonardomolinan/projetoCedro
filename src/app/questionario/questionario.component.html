@@ -1,0 +1,58 @@
+<div class="alert alert-info" style="text-align:center">
+    <strong>{{ titulo }}</strong>
+</div>
+
+<form class="container" #form = "ngForm">   
+  <div *ngFor="let pergunta of tresPrimeiras" class="form-group row">
+    <legend>{{ pergunta.id }} - {{ pergunta.title }}</legend><br><br>
+    <div class="form-check col-sm" *ngFor="let opcao of pergunta.alternatives;" >
+      <input ngModel type="radio" class="form-check-input" [name]='"gR" + pergunta.id' [id]="opcao.id" [value]="opcao.text">
+      <label for="CheckQuest{{opcao.id}}" class="form-check-label text-left">
+        {{opcao.text}}
+      </label>
+    </div>
+  </div>
+  <br><br>
+  <div class="text-center">
+    <font size="4">
+            4 - Qual sua familiaridade com os tipos de investimentos abaixo?<br>
+            Leve em consideração o valor aplicado nos últimos 2 anos.<br><br>
+    </font>
+  </div>
+  <div class="row justify-content-around dropdown">
+    <div class="form-group col-sm-6">
+      <label for="RendaOuTesouro">TÍTULOS DE RENDA FIXA OU TESOURO DIRETO</label>
+      <select ngModel name="RendaOuTesouro" id="RendaOuTesouro" class="form-control">
+        <option value="">Escolha uma alternativa</option>
+        <option [value]="opcaoDrop.opcao" *ngFor="let opcaoDrop of quarta">{{opcaoDrop.opcao}}</option>
+      </select>
+    </div>
+    <div class="form-group col-sm-6">
+      <label for="FundosInvestimento">FUNDOS DE INVESTIMENTO</label>
+      <select ngModel name="FundosInvestimento" id="FundosInvestimento" class="form-control">
+        <option value="">Escolha uma alternativa</option>
+        <option [value]="opcaoDrop.opcao" *ngFor="let opcaoDrop of quarta">{{opcaoDrop.opcao}}</option>
+      </select>
+    </div>
+    <div class="form-group col-sm-6">
+        <label for="AcoesAVista">AÇÕES A VISTA</label>
+        <select ngModel name="AcoesAVista" id="AcoesAVista" class="form-control">
+          <option value="">Escolha uma alternativa</option>
+          <option [value]="opcaoDrop.opcao" *ngFor="let opcaoDrop of quarta">{{opcaoDrop.opcao}}</option>
+        </select>
+    </div>
+    <div class="form-group col-sm-6">
+        <label for="AluguelOF">ALUGUEL DE AÇÕES, OPÇÕES E FUTUROS</label>
+        <select ngModel name="AluguelOF" id="AluguelOF" class="form-control">
+          <option value="">Escolha uma alternativa</option>
+          <option [value]="opcaoDrop.opcao" *ngFor="let opcaoDrop of quarta">{{opcaoDrop.opcao}}</option>
+        </select>
+    </div>
+  </div>
+</form>
+
+<div class="text-center">
+    <button type="submit" class="btn btn-lg btn-primary"
+    (click)="submit(form.value)">Submit</button>
+    <button class="btn btn-lg btn-primary" routerLink="">Voltar</button>
+</div>
